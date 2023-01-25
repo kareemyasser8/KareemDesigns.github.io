@@ -11,18 +11,33 @@
   </div>
 
   <div class="nav-mobile-elements-container">
+
     <img src="../../assets/Images/KYOnly Logo.png" alt="KY logo">
+
     <div class="menu-toggler">
-      <input type="checkbox" id="menu">
+      <input type="checkbox" id="menu" [(ngModel)]="isSlideMenuToggled">
+
       <label for="menu">
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
       </label>
     </div>
+
   </div>
+
+  <div class="nav-mobile-slider-options" *ngIf="isSlideMenuToggled == true" @slide>
+    <div class = "mobile-menu-container">
+        <div class="close-icon">
+            <div class="rectangle-one"></div>
+            <div class="rectangle-two"></div>
+        </div>
+        <a class="item">Gallery</a>
+        <a class="item">About</a>
+        <a class="item">Contact</a>
+    </div>
+  </div>
+
 </div>
 
-<div class="nav-mobile-slider-options">
-  <!-- <p>Content</p> -->
-</div>
+
