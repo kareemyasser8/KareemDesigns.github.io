@@ -1,0 +1,111 @@
+@import '../Sass/grid';
+@import '../Sass/variables';
+
+
+
+.cover-container {
+  width: 100%;
+  position: relative;
+  background-image: url('../../assets/Images/1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  // background-blend-mode: luminosity;
+  background-color: rgb(32, 44, 77); //if image is not loaded, this color will display at the bg
+  height: calc(100vh - 70px);
+  resize: horizontal;
+  // aspect-ratio: auto 16/9;
+  font-family: $website-font;
+
+  .welcome-text {
+    position: absolute;
+    z-index: 0;
+    height: 79%;
+    width: 90%;
+    top: 10%;
+    left: 5%;
+    // border: 1px solid yellow;
+    display: flex;
+    flex-direction: column;
+    color: $website-bg-color-light;
+    gap: 1rem;
+
+    .quote {
+      width: 40%;
+      // font-size: clamp($website-font-small,5vw,4*$website-font-large); //clamp(MIN, VAL, MAX)
+      font-size: (2*$website-font-large);
+      padding-left: 5%;
+      padding-top: 5%;
+    }
+
+    .introduction {
+      // font-size: clamp(0.5em,3vw,$website-font-small);
+      font-size: $website-font-small;
+      padding-left: 5%;
+      line-height: 1.5rem;
+      width: 40%;
+    }
+  }
+}
+
+
+@media($SIZE-MD) and ($LARGE-SIZE){
+  .cover-container{
+    .welcome-text {
+      //  border: 1px solid red;
+       .quote{
+        width: 90% + 5%;
+        font-size: clamp(($website-font-small), (3 * $website-font-small), (5 * $website-font-small));
+       }
+
+       .introduction{
+        width: 90% + 5%;
+       }
+    }
+  }
+}
+
+
+
+@media($SIZE-XS) {
+
+  .cover-container {
+    // width: 10%;
+    background-image: url('../../assets/Images/1.jpg');
+    // background-image: url('../../assets/Images/1.jpg');
+    background-color: $website-bg-color-dark;
+    // background-repeat: repeat;
+    // height: calc(100vh - 70px);
+    // height: calc(100vh - 70px);
+    background-size: 100%;
+
+    .welcome-text {
+
+      justify-content: flex-end;
+      // top: 20%;
+      // calc(100vh - 70px)
+      height: 100% - 15%;
+      // border: 1px solid red;
+
+      .quote {
+        width: 90% + 5%;
+        padding-top: 0%;
+        // border: 1px solid red;
+        font-size: clamp(($website-font-small), (3 * $website-font-small), (5 * $website-font-small));
+      }
+
+      @media(max-width: 300px) {
+        .quote {
+          font-size: clamp(($website-font-small), (2 * $website-font-small), (5 * $website-font-small));
+        }
+      }
+
+      .introduction {
+        width: 90% + 5%;
+      }
+    }
+
+  }
+}
+
+
+

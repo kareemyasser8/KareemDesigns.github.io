@@ -2,6 +2,6 @@ $grid_cols: 12;
 
 @for $i from 1 through $grid_cols{
   .col-#{$i}{
-    width: percentage( $i/$grid_cols)
+    width: calc( $i/$grid_cols)
   }
 }

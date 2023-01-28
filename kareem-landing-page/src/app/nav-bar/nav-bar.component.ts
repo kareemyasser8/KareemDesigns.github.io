@@ -11,6 +11,11 @@ export class NavBarComponent implements OnInit {
 
   isSlideMenuToggled: boolean;
 
+  closeMobileNav(){
+    this.isSlideMenuToggled = false;
+  }
+
+
   constructor() { }
 
   ngOnInit(): void {
