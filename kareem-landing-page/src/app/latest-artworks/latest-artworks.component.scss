@@ -1,14 +1,14 @@
 @import '../Sass/grid';
 @import '../Sass/variables';
 
-.page-section{
+.page-section {
   // border: 1px solid red;
   display: flex;
   flex-wrap: wrap;
   // flex-direction: column;
   width: 100%;
 
-  h1{
+  h1 {
     padding-left: 10%;
     padding-top: 2%;
     // padding-bottom: 3%;
@@ -18,19 +18,19 @@
     // border: 1px solid yellow;
   }
 
-  .artworks-section{
-    width:80%;
-    margin:auto;
+  .artworks-section {
+    width: 80%;
+    margin: auto;
     // border: 1px solid red;
     display: flex;
     justify-content: space-between;
     // gap: 2rem;
 
-    .artwork-container{
+    .artwork-container {
       width: 30%;
       position: relative;
 
-      .artwork-overlay{
+      .artwork-overlay {
         position: absolute;
         // border: 1px solid red;
         top: 0;
@@ -39,32 +39,33 @@
         right: 0;
         height: 100%;
         width: 100%;
-        background-color: rgba(black,0);
+        background-color: rgba(black, 0);
 
-        .overlay-text{
+        .overlay-text {
           position: absolute;
           top: 50%;
-          left:50%;
+          left: 50%;
           text-align: center;
-          transform: translate(-50%,-50%);
+          transform: translate(-50%, -50%);
           font-family: $website-font;
           font-size: $website-font-large;
           color: $website-bg-color-light;
           opacity: 0;
         }
       }
-      img{
-        width:100%;
+
+      img {
+        width: 100%;
       }
     }
 
-    .artwork-container:hover{
-      .artwork-overlay{
+    .artwork-container:hover {
+      .artwork-overlay {
         cursor: pointer;
         transition: .2s ease;
-        background-color: rgba(black,0.7);
+        background-color: rgba(black, 0.7);
 
-        .overlay-text{
+        .overlay-text {
           opacity: 1;
           animation-name: showText;
           animation-duration: 0.4s;
@@ -73,26 +74,28 @@
       }
     }
 
-    @keyframes showText{
-      from{
+    @keyframes showText {
+      from {
         opacity: 0;
-        transform: translate(-50%,-30%);
+        transform: translate(-50%, -30%);
       }
-      to{
+
+      to {
         opacity: 1;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
       }
     }
 
   }
 
   @media (max-width: 860px) {
-    .artworks-section{
+    .artworks-section {
       flex-direction: column;
       justify-content: center;
       // border: 1px solid red;
       gap: 1rem;
-      .artwork-container{
+
+      .artwork-container {
         width: 100%;
       }
     }
@@ -100,3 +103,14 @@
 
 
 }
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 550ms ease-in;
+}
+
+
+.fade-in.appear {
+  opacity: 1;
+}
+
