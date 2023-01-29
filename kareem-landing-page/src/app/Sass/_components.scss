@@ -44,7 +44,10 @@
   font-weight: 300;
   font-size: $website-font-small;
   padding: 0px 4%;
+  position: sticky;
+  z-index: 2;
   display: flex;
+  top: 0;
   height: 70px;
   align-items: stretch;
   justify-content: space-between;

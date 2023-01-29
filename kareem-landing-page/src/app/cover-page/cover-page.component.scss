@@ -2,6 +2,11 @@
 @import '../Sass/variables';
 
 
+@media (min-width: 913px) {
+  .cover-container{
+    background-attachment: fixed;
+  }
+}
 
 .cover-container {
   width: 100%;
@@ -9,11 +14,15 @@
   background-image: url('../../assets/Images/1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  // object-fit: cover;
   // background-blend-mode: luminosity;
   background-color: rgb(32, 44, 77); //if image is not loaded, this color will display at the bg
   height: calc(100vh - 70px);
   resize: horizontal;
   font-family: $website-font;
+
+  overflow-y: auto;
+  overflow-x: hidden;
 
   .welcome-text {
     position: absolute;
@@ -44,6 +53,7 @@
     }
   }
 }
+
 
 
 @media($SIZE-MD) and ($LARGE-SIZE){
