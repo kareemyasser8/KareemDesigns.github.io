@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoverPageComponent } from './cover-page/cover-page.component';
+import { LatestArtworksComponent } from './latest-artworks/latest-artworks.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     CoverPageComponent,
+    LatestArtworksComponent,
   ],
   imports: [
     BrowserModule,
