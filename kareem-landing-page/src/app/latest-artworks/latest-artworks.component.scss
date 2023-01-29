@@ -28,11 +28,75 @@
 
     .artwork-container{
       width: 30%;
+      position: relative;
+
+      .artwork-overlay{
+        position: absolute;
+        // border: 1px solid red;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(black,0);
+
+        .overlay-text{
+          position: absolute;
+          top: 50%;
+          left:50%;
+          text-align: center;
+          transform: translate(-50%,-50%);
+          font-family: $website-font;
+          font-size: $website-font-large;
+          color: $website-bg-color-light;
+          opacity: 0;
+        }
+      }
       img{
         width:100%;
       }
     }
 
+    .artwork-container:hover{
+      .artwork-overlay{
+        cursor: pointer;
+        transition: .2s ease;
+        background-color: rgba(black,0.7);
+
+        .overlay-text{
+          opacity: 1;
+          animation-name: showText;
+          animation-duration: 0.4s;
+        }
+
+      }
+    }
+
+    @keyframes showText{
+      from{
+        opacity: 0;
+        transform: translate(-50%,-30%);
+      }
+      to{
+        opacity: 1;
+        transform: translate(-50%,-50%);
+      }
+    }
+
   }
+
+  @media (max-width: 860px) {
+    .artworks-section{
+      flex-direction: column;
+      justify-content: center;
+      // border: 1px solid red;
+      gap: 1rem;
+      .artwork-container{
+        width: 100%;
+      }
+    }
+  }
+
 
 }
