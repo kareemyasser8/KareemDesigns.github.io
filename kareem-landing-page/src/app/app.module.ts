@@ -8,6 +8,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoverPageComponent } from './cover-page/cover-page.component';
 import { LatestArtworksComponent } from './latest-artworks/latest-artworks.component';
+import { FeaturedByComponent } from './featured-by/featured-by.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { LatestArtworksComponent } from './latest-artworks/latest-artworks.compo
     NavBarComponent,
     CoverPageComponent,
     LatestArtworksComponent,
+    FeaturedByComponent,
   ],
   imports: [
     BrowserModule,

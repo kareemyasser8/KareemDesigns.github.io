@@ -1,0 +1,62 @@
+@import '../Sass/grid';
+@import '../Sass/variables';
+
+.page-section{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  h1 {
+    padding-left: 10%;
+    padding-top: 2%;
+    // padding-bottom: 3%;
+    color: $website-bg-color-light;
+    font-family: $website-font;
+    flex-grow: 1;
+    // border: 1px solid yellow;
+  }
+
+  .logos-section{
+    width: 80%;
+    margin: auto;
+    // border: 1px solid red;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    .logo-container{
+
+      width: 19%;
+      // border: 1px solid red;
+      img{
+        width: 100%;
+      }
+    }
+
+  }
+
+  @media (max-width: 860px) {
+    .logos-section {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 2rem;
+
+      .logo-container {
+        width: 35%;
+      }
+    }
+  }
+
+  .fade-in{
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: 0.7s ease-out;
+  }
+
+  .appear{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+
+
+}
