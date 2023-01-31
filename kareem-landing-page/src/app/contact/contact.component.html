@@ -3,17 +3,71 @@
       <h1>
           Lets keep in touch
       </h1>
-      <form class="form-container fade-in">
+      <form class="form-container fade-in" [formGroup]= "registerForm" (ngSubmit)="onSubmit()" >
+
           <label for="name">Name</label>
-          <input id= "name" type="text">
+          <input
+            maxlength="10"
+            name="name"
+            formControlName="name"
+            id= "name"
+            type="text"
+            placeholder="Enter your name"
+            >
+
+            <div class="form-error" *ngIf= "name?.touched && name?.invalid">
+                <div *ngIf="name?.errors?.['required']">*Name is required please</div>
+                <div *ngIf="name?.errors?.['cannotContainNumbers']">*Name cannot contain Numbers</div>
+            </div>
 
           <label for="email">Email</label>
-          <input id= "email" type="text">
+          <input  formControlName="email" name="email" id= "email" type="text"
+          placeholder="Example: John@email.com">
 
-          <label for="comment">Comment</label>
-          <input id= "comment" type="text">
+          <div class="form-error" *ngIf="email?.touched && email?.invalid">
+              <div *ngIf="email?.errors?.['required']">*Email is required please</div>
+              <div *ngIf="email?.errors?.['email']">*Please write a valid Email format</div>
+              <div *ngIf="email?.errors?.['cannotContainSpace']">*Email can't contain space</div>
+          </div>
 
-          <button class="submit">Submit</button>
+
+          <label for="message">Message</label>
+          <textarea formControlName="message" name = "message"  id= "message"
+          placeholder="Enter your message here.."
+          ></textarea>
+
+          <div class="form-error" *ngIf="message?.touched && message?.invalid">
+            <div *ngIf="email?.errors?.['required']">*Message is required please</div>
+        </div>
+
+
+
+
+
+          <button [disabled]="registerForm.invalid" class="submit">Submit</button>
       </form>
   </div>
 </div>
+
+
+<!-- <div
+class ="form-error"
+*ngIf="name.touched && !name.valid">
+  <div *ngIf="name.errors?.['required']">
+    Name is required
+  </div>
+  <div *ngIf="name.errors?.['minlength']">
+    Name should be minimun {{name.errors?.['minlength']?.['requiredLength']}} characters
+  </div>
+</div> -->
+
+<!-- <div class ="form-error" *ngIf="email.touched && !email.valid" >
+  <div *ngIf="email.errors?.['required']">*Email is required</div>
+</div> -->
+
+
+<!-- <div class ="form-error" *ngIf="message.touched && !message.valid">
+  <div *ngIf="message.errors?.['required']">*Message is required</div>
+</div> -->
+
+<!-- [disabled]="!f.valid"  -->

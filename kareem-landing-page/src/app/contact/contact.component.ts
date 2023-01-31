@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormValidators } from './form.validators';
 
 @Component({
   selector: 'contact',
@@ -7,14 +9,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  registerForm= this.fb.group({
+    name: ['',[Validators.required, FormValidators.cannotContainNumbers]],
+    email: ['',[Validators.required,
+                Validators.email,
+                FormValidators.cannotContainSpace
+      ]],
+    message: ['',Validators.required],
+  })
 
-  animationOnScroll(){
+  get name(){
+    return this.registerForm.get('name');
+  }
+
+  get email(){
+    return this.registerForm.get('email');
+  }
+
+  get message(){
+    return this.registerForm.get('message');
+  }
+
+  constructor(private fb: FormBuilder) {
+
+  }
+
+  onSubmit(): void {
+    console.log('Submitted form: ',
+    this.registerForm.value ,
+    this.registerForm.invalid
+    )
+    alert("Thanks for entering the data, This is a static site but I appreciate it")
+  }
+
+  animationOnScroll() {
     let form = document.querySelector('.form-section');
-    let observer = new IntersectionObserver((entries,observer)=>{
-      entries.forEach(entry=>{
-        if(!entry.isIntersecting) return
-        else{
+    let observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return
+        else {
           entry.target.classList.add("appear");
           observer.unobserve(entry.target)
         }
