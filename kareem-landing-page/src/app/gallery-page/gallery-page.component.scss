@@ -1,0 +1,109 @@
+@import '../Sass/grid';
+@import '../Sass/variables';
+
+
+@media (min-width: 913px) {
+  .cover-container{
+    background-attachment: fixed;
+  }
+}
+
+.cover-container {
+  width: 100%;
+  position: relative;
+  background-image: url('../../assets/Images/3.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  // object-fit: cover;
+  // background-blend-mode: luminosity;
+  background-color: rgb(32, 44, 77); //if image is not loaded, this color will display at the bg
+  height: calc(100vh - 70px);
+  resize: none;
+  font-family: $website-font;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  .welcome-text {
+    position: absolute;
+    z-index: 0;
+    height: 79%;
+    width: 90%;
+    top: 10%;
+    left: 5%;
+    display: flex;
+    // border: 1px solid red;
+    flex-direction: column;
+    color: $website-bg-color-light;
+    gap: 1rem;
+
+    .quote {
+      width: 40%;
+      font-size: (2*$website-font-large);
+      font-weight: 600;
+      padding-left: 5%;
+      padding-top: 5%;
+    }
+
+    .introduction {
+      font-size: $website-font-small;
+      padding-left: 5%;
+      line-height: 1.5rem;
+      width: 40%;
+    }
+  }
+}
+
+
+
+@media($SIZE-MD) and ($LARGE-SIZE){
+  .cover-container{
+    .welcome-text {
+       .quote{
+        width: 90% + 5%;
+        font-size: clamp(($website-font-small), (3 * $website-font-small), (5 * $website-font-small));
+       }
+
+       .introduction{
+        width: 90% + 5%;
+       }
+    }
+  }
+}
+
+
+
+@media($SIZE-XS) {
+
+  .cover-container {
+    background-image: url('../../assets/Images/3.jpg');
+    background-color: $website-bg-color-dark;
+    background-size: 100%;
+
+    .welcome-text {
+
+      justify-content: flex-end;
+      height: 100% - 15%;
+
+      .quote {
+        width: 90% + 5%;
+        padding-top: 0%;
+        font-size: clamp(($website-font-small), (3 * $website-font-small), (5 * $website-font-small));
+      }
+
+      @media(max-width: 300px) {
+        .quote {
+          font-size: clamp(($website-font-small), (2 * $website-font-small), (5 * $website-font-small));
+        }
+      }
+
+      .introduction {
+        width: 90% + 5%;
+      }
+    }
+
+  }
+}
+
+
+

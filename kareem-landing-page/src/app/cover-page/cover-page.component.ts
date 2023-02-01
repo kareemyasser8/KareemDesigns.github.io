@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { fadeIn, startSlide } from '../animations';
 
 @Component({
@@ -8,6 +8,8 @@ import { fadeIn, startSlide } from '../animations';
   animations:[startSlide,fadeIn]
 })
 export class CoverPageComponent implements OnInit {
+
+  @Input() coverImage: string;
 
   constructor() { }
 

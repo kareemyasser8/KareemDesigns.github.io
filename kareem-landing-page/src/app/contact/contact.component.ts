@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormValidators } from './form.validators';
+import { fadeIn, startSlide } from '../animations';
 
 @Component({
   selector: 'contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
+  animations: [startSlide, fadeIn]
 })
 export class ContactComponent implements OnInit {
 
@@ -44,7 +46,10 @@ export class ContactComponent implements OnInit {
   }
 
   animationOnScroll() {
-    let form = document.querySelector('.form-section');
+    let form = document.querySelectorAll('.form-section');
+    let options = {
+      rootMargin: "0px 0px -100px 0px"
+    };
     let observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return
@@ -53,9 +58,9 @@ export class ContactComponent implements OnInit {
           observer.unobserve(entry.target)
         }
       })
-    })
+    },options)
 
-    form => observer.observe(form);
+    form.forEach( form=> observer.observe(form))
   }
 
 

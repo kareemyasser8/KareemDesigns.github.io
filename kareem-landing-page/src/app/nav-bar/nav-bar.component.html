@@ -1,13 +1,12 @@
 <div class="nav">
   <div class="website-logo">
     <!-- <img src="../../assets/Images/KY LogoWebsite.png" alt="KY logo"> -->
-    <img src="assets/Images/KY LogoWebsite.png" alt="KY logo">
+    <img src="assets/Images/KY LogoWebsite.png" [routerLink]="['/home-page']" alt="KY logo">
   </div>
 
   <div class="navbar-items">
-    <a class="item">Gallery</a>
-    <a class="item">About</a>
-    <a class="item">Contact</a>
+    <a class="item"[routerLink]="['/gallery-page']" >Gallery</a>
+    <a class="item"[routerLink]="['/contact-page']">Contact</a>
   </div>
 
 
@@ -15,7 +14,7 @@
 
   <div class="nav-mobile-elements-container">
 
-    <img src="assets/Images/KYOnly Logo.png" alt="KY logo">
+    <img src="assets/Images/KYOnly Logo.png" [routerLink]="['/home-page']" alt="KY logo">
 
     <div class="menu-toggler">
       <input type="checkbox" id="menu" [(ngModel)]="isSlideMenuToggled">
@@ -38,9 +37,8 @@
             <div class="rectangle-two"></div>
         </div>
 
-        <a class="item">Gallery</a>
-        <a class="item">About</a>
-        <a class="item">Contact</a>
+        <a class="item" [routerLink]="['/gallery-page']">Gallery</a>
+        <a class="item"[routerLink]="['/contact-page']">Contact</a>
     </div>
   </div>
 

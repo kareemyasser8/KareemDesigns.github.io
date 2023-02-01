@@ -7,14 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-  constructor(){
+  constructor() {
 
   }
 
-  showTopBtn = function(){
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+
+  showTopBtn = function () {
     let topBtn = document.querySelector(".goTopBtn");
     let y = window.scrollY;
-    topBtn.classList.toggle("show",y >= 154);
+    topBtn.classList.toggle("show", y >= 154);
   }
 
 

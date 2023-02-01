@@ -1,8 +1,8 @@
 .goTopBtn{
   position: fixed;
   opacity: 0;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   bottom: 20px;
   right: 20px;
   background-color: rgba($color: #000000, $alpha: 0.7);
@@ -13,13 +13,19 @@
   transition: 0.3s ease-in-out;
   i{
     color: white;
-    font-size: 30px;
+    font-size: 20px;
   }
 }
 
 .show{
   opacity: 1;
   transition: 0.3s ease-in-out;
+}
+
+@media (max-width: 826px) {
+  .show{
+    opacity: 0;
+  }
 }
 
 

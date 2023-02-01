@@ -11,6 +11,9 @@ import { LatestArtworksComponent } from './latest-artworks/latest-artworks.compo
 import { FeaturedByComponent } from './featured-by/featured-by.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
+import { GalleryPageComponent } from './gallery-page/gallery-page.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { ContactPageComponent } from './contact-page/contact-page.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,9 @@ import { FooterComponent } from './footer/footer.component';
     FeaturedByComponent,
     ContactComponent,
     FooterComponent,
+    GalleryPageComponent,
+    HomePageComponent,
+    ContactPageComponent,
   ],
   imports: [
     BrowserModule,
