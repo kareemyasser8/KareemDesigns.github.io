@@ -10,6 +10,7 @@ import { CoverPageComponent } from './cover-page/cover-page.component';
 import { LatestArtworksComponent } from './latest-artworks/latest-artworks.component';
 import { FeaturedByComponent } from './featured-by/featured-by.component';
 import { ContactComponent } from './contact/contact.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ContactComponent } from './contact/contact.component';
     LatestArtworksComponent,
     FeaturedByComponent,
     ContactComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

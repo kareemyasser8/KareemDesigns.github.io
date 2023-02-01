@@ -37,11 +37,11 @@
   background-image: url('../../assets/Images/2.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  // object-fit: cover;
+
   // background-blend-mode: luminosity;
   background-color: rgb(32, 44, 77); //if image is not loaded, this color will display at the bg
   height: calc(100vh - 70px);
-  resize: horizontal;
+  resize: none;
   font-family: $website-font;
 
   overflow-y: auto;

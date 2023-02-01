@@ -35,11 +35,12 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log('Submitted form: ',
-    this.registerForm.value ,
-    this.registerForm.invalid
-    )
     alert("Thanks for entering the data, This is a static site but I appreciate it")
+    this.resetFrom();
+  }
+
+  resetFrom() {
+    this.registerForm.reset();
   }
 
   animationOnScroll() {

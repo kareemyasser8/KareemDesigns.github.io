@@ -1,10 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'kareem-landing-page';
+export class AppComponent implements OnInit {
+
+  constructor(){
+
+  }
+
+  ngOnInit(): void {
+
+  }
+  title = 'Kareem Photoshop Art';
+
 }

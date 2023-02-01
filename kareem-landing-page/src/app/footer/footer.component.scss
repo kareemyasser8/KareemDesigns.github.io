@@ -1,0 +1,46 @@
+@import '../../app/Sass/variables';
+
+.footer-container{
+  width: 82%;
+  margin: auto;
+  height: 30vh;
+  display: grid;
+  grid-gap: 5%;
+  color: $website-bg-color-light;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
+
+  font-family: $website-font;
+
+  .socials{
+    height: 30px;
+    margin-top: -10px;
+    display: flex;
+    gap: 4%;
+    img{
+      height: 100%;
+    }
+
+    img:hover{
+      cursor: pointer;
+      scale: 1.2;
+      transition: 0.2s ease-in-out;
+    }
+
+  }
+}
+
+.copyrights{
+  display: flex;
+  align-items: center;
+  font-size: $website-font-small * 0.8;
+}
+
+@media (max-width: 600px) {
+  .footer-container{
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    // padding-bottom: 50px;
+  }
+}
+
