@@ -1,5 +1,6 @@
 .goTopBtn{
   position: fixed;
+  opacity: 0;
   width: 50px;
   height: 50px;
   bottom: 20px;
@@ -9,21 +10,16 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  transition: 0.3s ease-in-out;
   i{
     color: white;
     font-size: 30px;
   }
 }
 
-
-// .footer{
-//   opacity: 0;
-//   // background-color: red;
-// }
-
-
 .show{
   opacity: 1;
   transition: 0.3s ease-in-out;
 }
+
 
