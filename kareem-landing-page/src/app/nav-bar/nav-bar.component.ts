@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { slide } from './../animations';
 
 @Component({
@@ -10,11 +10,16 @@ import { slide } from './../animations';
 export class NavBarComponent implements OnInit {
 
   isSlideMenuToggled: boolean;
+  @Output() tab = new EventEmitter<string>();
+
 
   closeMobileNav(){
     this.isSlideMenuToggled = false;
   }
 
+  onClickTab(section): void{
+    this.tab.emit(section)
+  }
 
   constructor() { }
 

@@ -5,8 +5,8 @@
   </div>
 
   <div class="navbar-items">
-    <a class="item"[routerLink]="['/gallery-page']" >Gallery</a>
-    <a class="item"[routerLink]="['/contact-page']">Contact</a>
+    <a (click)="onClickTab('gallery')" class="item">Gallery</a>
+    <a (click)="onClickTab('contact')"class="item">Contact</a>
   </div>
 
 
@@ -37,8 +37,8 @@
             <div class="rectangle-two"></div>
         </div>
 
-        <a class="item" [routerLink]="['/gallery-page']">Gallery</a>
-        <a class="item"[routerLink]="['/contact-page']">Contact</a>
+        <a class="item" (click)="onClickTab('gallery')">Gallery</a>
+        <a class="item" (click)="onClickTab('contact')">Contact</a>
     </div>
   </div>
 

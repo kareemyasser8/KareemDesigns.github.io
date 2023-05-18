@@ -15,6 +15,17 @@ export class AppComponent implements OnInit {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
+  scrollToSection(section){
+    const targetRect = document.getElementById(section).getBoundingClientRect();
+
+    window.scrollTo({
+      top: targetRect.top + window.pageYOffset - 65,
+      left: targetRect.left + window.pageXOffset,
+      behavior: "smooth",
+    });
+
+  }
+
 
   showTopBtn = function () {
     let topBtn = document.querySelector(".goTopBtn");
